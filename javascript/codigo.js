@@ -2,7 +2,7 @@
 $(".button").on("click", changeImage);
 
 function changeImage(){
-	temp = '<img class="big" src="img/{{id}}.jpg" alt="{{alt}}">'
+	temp = '<img src="img/{{id}}.jpg" alt="{{alt}}">'
 	console.log("hola");
 	id = $(this).data("id");
 
