@@ -31,3 +31,58 @@ div.buttons{
 	border-radius: 5px;
 	margin: 0.3em;
 }
+
+ul{
+	list-style-type: none;
+}
+
+li{
+	border: solid 1px #fff;
+	text-align: center;
+	color: #fff;
+}
+
+
+li:not(:first-child):hover{
+	background-color: #AAA;
+	
+}
+a:link {
+	text-decoration: none;
+}
+a:visited{
+	text-decoration: none;
+	color: #fff;
+}
+
+.hand:hover{
+	cursor: pointer;
+}
+
+.article{
+
+	padding: 5% 20%;
+	color:	#fff;
+	text-align: center;
+}
+
+iframe{
+	margin: 5% 0;
+}
+
+.yellow{
+	color: #FFFF00;
+    font-size: 1.3em;
+
+}
+
+.red{
+	color: #FB6262;
+    font-size: 1.3em;
+
+}
+
+.title{
+	font-size: 2em;
+	margin: 3% 0;
+}

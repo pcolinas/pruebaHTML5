@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8"/>
+<meta name="author" content="Pedro Colinas"/>
 <title>Padel Colinas</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css" >
 </head>
@@ -10,22 +12,43 @@
 	<img class="big" src="img/image1.jpg">
 	<div class="menu">
 	<ul>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
+		<li>Menú</li>
+		<li class="hand"><a href="#about-us">Sobre nosotros</a></li>
+		<li class="hand"><a href="#where">Dónde encontrarnos</a></li>
+		<li class="hand">Reservas</li>
+		
 	</ul>
 </div>
 </div>
 
 <div class="buttons">
-	<button type="button" data-id="image1" class="button"></button>
-	<button type="button" data-id="image2" class="button"></button>
-	<button type="button" data-id="image3" class="button"></button>
+	<button type="button" data-id="image1" class="button hand"></button>
+	<button type="button" data-id="image2" class="button hand"></button>
+	<button type="button" data-id="image3" class="button hand"></button>
+</div>
+<div class="article" id="about-us"> <div class="title"> SOBRE NOSOTROS </div>
+	Pistas de pádel económicas para momentos de crisis. En Pádel Colinas ofrecemos pistas de calidad, limpiadas y acondicionadas diariamente, y a un precio inigualable.<br> Por tan solo <span class="price yellow">10€ la hora y media.</span>
+	
+
+	<div class="title">CONOCE NUESTRAS INSTALACIONES</div>
+
+	<video controls preload="metadata" poster="img/image4.jpg">
+		<source src="img/video.mp4" type="video/mp4"/>
+		<p>Tu navegador no soporta vídeo</p>
+	</video>
+
 </div>
 
+<div class="article" id="where">
+	<div class="title">DÓNDE ENCONTRARNOS</div>
+	Nos encontramos en el Polígono Espíritu Santo, que se encuentra en la carretera de Colloto por la N-634.
+	<div id="map">
+	</div>
 
+</div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="https://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
 <script src="javascript/codigo.js"></script>
 </body>
 </html>
