@@ -2,11 +2,23 @@
 $(".button").on("click", changeImage);
 
 function changeImage(){
-	temp = '<img class="big" src="img/{{id}}.jpg">'
+	temp = '<img class="big" src="img/{{id}}.jpg" alt="{{alt}}">'
 	console.log("hola");
 	id = $(this).data("id");
 
 	temp = temp.replace('{{id}}', id);
+
+	switch(id){
+		case 'image1':
+			temp = temp.replace('{{alt}}', 'Raqueta de padel y bolas');
+			break;
+		case 'image2':
+			temp = temp.replace('{{alt}}', 'Pista de padel desde arriba');
+			break;
+		case 'image3':
+			temp = temp.replace('{{alt}}', 'Partido de padel');
+			break;
+	}
 
 	$(".big").replaceWith(temp);
 

@@ -15,7 +15,7 @@
 		<li>Menú</li>
 		<li class="hand"><a href="#about-us">Sobre nosotros</a></li>
 		<li class="hand"><a href="#where">Dónde encontrarnos</a></li>
-		<li class="hand"><a href="#reserve">Reservas</a></li>
+		<li class="hand"><a href="#res">Reservas</a></li>
 		
 	</ul>
 </div>
@@ -26,11 +26,11 @@
 	<button type="button" data-id="image2" class="button hand"></button>
 	<button type="button" data-id="image3" class="button hand"></button>
 </div>
-<div class="article" id="about-us"> <div class="title"> SOBRE NOSOTROS </div>
+<div class="article" id="about-us"> <h2 class="title"> SOBRE NOSOTROS </h2>
 	Pistas de pádel económicas para momentos de crisis. En Pádel Colinas ofrecemos pistas de calidad, limpiadas y acondicionadas diariamente, y a un precio inigualable.<br> Por tan solo <span class="price yellow">10€ la hora y media.</span>
 	
 
-	<div class="title">CONOCE NUESTRAS INSTALACIONES</div>
+	<h2 class="title">CONOCE NUESTRAS INSTALACIONES</h2>
 
 	<div id="video"><video controls preload="metadata" poster="img/image4.jpeg">
 		<source src="img/video.mp4" type="video/mp4"/>
@@ -40,7 +40,7 @@
 </div>
 
 <div class="article" id="where">
-	<div class="title">DÓNDE ENCONTRARNOS</div>
+	<h2 class="title">DÓNDE ENCONTRARNOS</h2>
 	Nos encontramos en el Polígono Espíritu Santo, que se encuentra en la carretera de Colloto por la N-634.
 	<div id="map">
 	</div>
@@ -48,6 +48,26 @@
 		<button type="button" class="button-me hand"> Situarme en el mapa </button>
 		<button type="button" class="button-route hand"> Ruta hasta las pistas</button>
 	</div>
+</div>
+
+<div class="article" id="res">
+	<h2 class="title">RESERVA CON NOSOTROS</h2>
+	<form method="post" action="http://ejemplo.com/procesa">
+		<label> Nombre: <input name="cliente" placeholder="Escribe aquí"></label><br>
+		<label> Teléfono: <input type=tel name="telf" placeholder="Escribe aquí"></label><br>
+		<label> Correo electrónico: <input type=email name="correo" placeholder="hola@hola.es"></label><br>
+		<label> Fecha de reserva: <input type=date name=fecha></label><br>
+		<label> Hora: <input type=number name=dia min=9 max=21></label><br>
+		<button>Enviar</button><br>
+	</form>
+	<br>También puedes ponerte en contacto con nosotros por teléfono.<br>
+	Tlf. fijo: 985 985 985<br>
+	Tlf. movil: 678 678 678<br>
+	<br>O por correo electrónico.<br>
+	email: reservas@padelcolinas.com<br>
+
+
+	
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
