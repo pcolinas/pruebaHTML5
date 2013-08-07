@@ -15,7 +15,7 @@
 		<li>Menú</li>
 		<li class="hand"><a href="#about-us">Sobre nosotros</a></li>
 		<li class="hand"><a href="#where">Dónde encontrarnos</a></li>
-		<li class="hand">Reservas</li>
+		<li class="hand"><a href="#reserve">Reservas</a></li>
 		
 	</ul>
 </div>
@@ -32,10 +32,10 @@
 
 	<div class="title">CONOCE NUESTRAS INSTALACIONES</div>
 
-	<video controls preload="metadata" poster="img/image4.jpg">
+	<div id="video"><video controls preload="metadata" poster="img/image4.jpeg">
 		<source src="img/video.mp4" type="video/mp4"/>
 		<p>Tu navegador no soporta vídeo</p>
-	</video>
+	</video></div>
 
 </div>
 
@@ -44,7 +44,10 @@
 	Nos encontramos en el Polígono Espíritu Santo, que se encuentra en la carretera de Colloto por la N-634.
 	<div id="map">
 	</div>
-
+	<div class="buttons">
+		<button type="button" class="button-me hand"> Situarme en el mapa </button>
+		<button type="button" class="button-route hand"> Ruta hasta las pistas</button>
+	</div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>

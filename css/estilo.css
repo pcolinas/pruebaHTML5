@@ -49,6 +49,7 @@ li:not(:first-child):hover{
 }
 a:link {
 	text-decoration: none;
+	color: #fff;
 }
 a:visited{
 	text-decoration: none;
@@ -61,13 +62,10 @@ a:visited{
 
 .article{
 
-	padding: 5% 20%;
+	padding: 0 20%;
 	color:	#fff;
-	text-align: center;
-}
-
-iframe{
-	margin: 5% 0;
+	margin: 6em 0;
+	
 }
 
 .yellow{
@@ -85,4 +83,13 @@ iframe{
 .title{
 	font-size: 2em;
 	margin: 3% 0;
+	text-align: center;
+}
+
+#video{
+	text-align: center;
+}
+
+#map{
+	margin: 1em 0;
 }

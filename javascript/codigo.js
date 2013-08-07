@@ -24,21 +24,15 @@ setInterval(function(){
 }
 ,1000);
 
-/* Mostrar mapa con localización de las pistas*/
+/* Mostrar mapa con localización de las pistas usando la libreria gmaps.js proporcionada en los ejemplos*/
 
-navigator.geolocation.getCurrentPosition(handleGeolocation, handleErrors);
-
-
-
-function handleGeolocation(position) {
-
-	var myPlace 	= new google.maps.LatLng(43.378938,-5.805685);
-	var yourPlace 	= new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+showMap();
+function showMap() {
 	
 	map = new GMaps({
 		div: '#map',
-		lat: (43.378938 + position.coords.latitude)/2,
-		lng: (-5.805685 + position.coords.longitude)/2,
+		lat: 43.378938,
+		lng: -5.805685,
 		height: '500px',
 	});
 	
@@ -47,24 +41,72 @@ function handleGeolocation(position) {
 		lng: -5.805685,
 		title: 'Padel Colinas'
 	});
+} 
+
+/* Mostrar mapa con localización del usuario y de las pistas usando la libreria gmaps.js proporcionada en los ejemplos*/
+
+$(".button-me").on("click", whereAmI);
+
+function whereAmI(){
+	navigator.geolocation.getCurrentPosition(myPosition, handleErrors);
+}
+
+function myPosition(position){
+	
+	var myPlace 	= new google.maps.LatLng(43.378938,-5.805685);
+	var yourPlace 	= new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+	
+	map = new GMaps({
+		div: '#map',
+		height: '500px',
+	});
+
+	map.addMarker({
+		lat: myPlace.lb,
+		lng: myPlace.mb,
+		title: 'Padel Colinas'
+	});
 
 	map.addMarker({
 		lat: position.coords.latitude,
 		lng: position.coords.longitude,
+		color: 'blue',
 		title: 'Tú'
 	});
-
+	
 	var bounds = new google.maps.LatLngBounds();
 	bounds.extend(myPlace);
 	bounds.extend(yourPlace);
 	map.fitBounds(bounds);
+}
 
-	
+/* Mostrar ruta desde ubicación actual hasta pistas creando el mapa como se indica en la API */
+
+$(".button-route").on("click", setRoute);
+
+function setRoute(){
+	navigator.geolocation.getCurrentPosition(handleGeolocation, handleErrors);
+}
+
+function handleGeolocation(position){
+
+	var directionsDisplay;	
 	var directionsService = new google.maps.DirectionsService();
-	var directionsDisplay = new google.maps.DirectionsRenderer();
-	directionsDisplay.setMap(map);
-	
+	var map;
+	var myPlace 	= new google.maps.LatLng(43.378938,-5.805685);
+	var yourPlace 	= new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+	directionsDisplay = new google.maps.DirectionsRenderer();
 
+	var mapOptions = {
+		height: '500px',
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	
+	map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	
+	directionsDisplay.setMap(map);
+		
+	
 	var request = {
 		origin: yourPlace,
 		destination: myPlace,
@@ -72,13 +114,15 @@ function handleGeolocation(position) {
 	};
 	
 
+
 	directionsService.route(request, function(result, status) {
     	if (status == google.maps.DirectionsStatus.OK) {
      	 	directionsDisplay.setDirections(result);
     	}
   	});
 
-} 
+
+}
 
 function handleErrors(error){
 	switch(error.code)
@@ -97,6 +141,3 @@ function handleErrors(error){
 			break;
 	}
 }
-
-	//handleGeolocation();
-	//handleErrors();
