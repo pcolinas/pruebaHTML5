@@ -153,3 +153,26 @@ function handleErrors(error){
 			break;
 	}
 }
+
+/* Eventos y funciones para personalizar el color de la web*/
+
+$(".color").on("click", changeColor);
+
+function changeColor(){
+
+	id = $(this).data("id");
+
+	switch(id){
+		case 'blue':
+			$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("blue");
+			break;
+		case 'green':
+			$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("green");
+			break;
+		case 'orange':
+			$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("orange");
+			break;
+	}
+
+
+}
