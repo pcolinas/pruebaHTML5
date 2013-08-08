@@ -154,25 +154,41 @@ function handleErrors(error){
 	}
 }
 
-/* Eventos y funciones para personalizar el color de la web*/
+/* localStorage para personalizar el color de la web*/
 
-$(".color").on("click", changeColor);
+$().ready(function() {
 
-function changeColor(){
-
-	id = $(this).data("id");
-
-	switch(id){
-		case 'blue':
-			$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("blue");
-			break;
-		case 'green':
-			$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("green");
-			break;
-		case 'orange':
-			$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("orange");
-			break;
+	if (!localStorage) {
+		alert(":( Tu navegador no soporta Local Storage API");
 	}
 
+	var bckgrnd = localStorage.getItem("color");
+	if(bckgrnd == null) localStorage.setItem("color","blue");
 
-}
+	
+	$("body").addClass(bckgrnd);
+
+
+	$(".color").on("click", changeColor);
+
+	function changeColor(){
+
+		id = $(this).data("id");
+
+		switch(id){
+			case 'blue':
+				$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("blue");
+				localStorage.setItem("color","blue");
+				break;
+			case 'green':
+				$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("green");
+				localStorage.setItem("color","green");
+				break;
+			case 'orange':
+				$("body").removeClass("blue").removeClass("green").removeClass("orange").addClass("orange");
+				localStorage.setItem("color","orange");
+				break;
+		}
+	}
+});
+
