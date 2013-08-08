@@ -71,17 +71,24 @@ div.buttons{
 	text-align: center;
 }
 
+.big{
+	width: 80%;
+}
+
 .menu{
 	width: 20%;
 	height: 100%;
 	float: left;
-	position: fixed;
 	margin-left: 1em;
+}
+.not-mobile{
+	position: fixed;
 }
 
 .button{
-	border-radius: 5px;
-	margin: 0.3em;
+	border-radius: 30px;
+	margin: 0.5em 0.3em;
+	font-size: 0.5em;
 }
 
 ul{
@@ -172,6 +179,10 @@ small{
 	margin: 1em;
 	color: #fff;
 
+}
+
+input{
+	margin: 0.2em;
 }
 
 .clearfix:after {

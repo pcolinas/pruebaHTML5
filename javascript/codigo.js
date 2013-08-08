@@ -2,8 +2,8 @@
 $(".button").on("click", changeImage);
 
 function changeImage(){
-	temp = '<img src="img/{{id}}.jpg" alt="{{alt}}">'
-	console.log("hola");
+	temp = '<img class="big" src="img/{{id}}.jpg" alt="{{alt}}">'
+	
 	id = $(this).data("id");
 
 	temp = temp.replace('{{id}}', id);
@@ -21,7 +21,6 @@ function changeImage(){
 	}
 
 	$(".big").replaceWith(temp);
-
 
 }
 
@@ -46,8 +45,10 @@ function showMap() {
 		lat: 43.378938,
 		lng: -5.805685,
 		height: '500px',
+		mapTypeId:google.maps.MapTypeId.ROADMAP
 	});
-	
+
+
 	map.addMarker({
 		lat: 43.378938,
 		lng: -5.805685,
@@ -140,16 +141,16 @@ function handleErrors(error){
 	switch(error.code)
 	{
 		case error.PERMISSION_DENIED:
-			alert("The location acquisition process failed because the document does not have permission to use the Geolocation API.");
+			alert("No se puede mostrar porque el navegador no permite la geolocalización. Dé permisos o use otro navegador");
 			break;
 		case error.POSITION_UNAVAILABLE:
 			break;
-			alert("The position of the device could not be determined");
+			alert("No se ha podido determinar la posición");
 		case error.TIMEOUT:
 			alert("Timeout");
 			break;
 		default:
-			alert("Something bad and unknown - happened");
+			alert("Error desconocido");
 			break;
 	}
 }
@@ -162,8 +163,7 @@ $().ready(function() {
 		alert(":( Tu navegador no soporta Local Storage API");
 	}
 
-	var bckgrnd = localStorage.getItem("color");
-	if(bckgrnd == null) localStorage.setItem("color","blue");
+	var bckgrnd = typeof localStorage["color"] == "undefined" ? "blue":localStorage["color"];
 
 	
 	$("body").addClass(bckgrnd);
@@ -192,3 +192,38 @@ $().ready(function() {
 	}
 });
 
+/* Cambios dependiendo del navegador empleado 
+ Como firefox no reconoce algunas nuevas etiquetas de html5 haremos algún cambio en el formulario
+*/
+
+temp_res = '<h2 class="title">RESERVA CON NOSOTROS</h2><form method="post" action="http://ejemplo.com/procesa"><label> Nombre: <input name="cliente" placeholder="Escribe aquí"></label><br><label> Teléfono: <input type=tel name="telf" placeholder="Escribe aquí"></label><br><label> Correo electrónico: <input type=email name="correo" placeholder="hola@hola.es"></label><br><label> Fecha de reserva: <input type=date name=fecha placeholder="{{plcDate}}"></label><br><label> Hora: <input type=number name=dia min=9 max=21 placeholder="{{plcTime}}"></label><br><button>Enviar</button><br></form><br>También puedes ponerte en contacto con nosotros por teléfono.<br>Tlf. fijo: 985 985 985<br>Tlf. movil: 678 678 678<br><br>O por correo electrónico.<br>email: reservas@padelcolinas.com<br>';
+
+if(navigator.userAgent.match(/firefox/i)){ //estamos en firefox
+	temp_res = temp_res.replace('{{plcDate}}', 'dd/mm/aaaa');
+	temp_res = temp_res.replace('{{plcTime}}', 'Entre las 9.00-21.00');
+
+	$("#res").append(temp_res);
+}
+else { // Estamos en chrome o en otro
+	temp_res = temp_res.replace('{{plcDate}}', '');
+	temp_res = temp_res.replace('{{plcTime}}', '');
+
+	$("#res").append(temp_res);
+
+}
+
+/* Detectar dispositivo móvil porque el menú se comportaba raro al hacer zoom*/
+
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    $(".menu").removeClass("not-mobile");
+ }
+ else {
+    $(".menu").addClass("not-mobile");
+ }
