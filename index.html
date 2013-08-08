@@ -4,6 +4,8 @@
 <meta charset="utf-8"/>
 <meta name="author" content="Pedro Colinas"/>
 <title>Padel Colinas</title>
+<link href='img/favicon.ico' rel='shortcut icon' type='image/x-icon'/>
+<br/><link href='img/favicon.ico' rel='icon' type='image/x-icon'/>
 <link rel="stylesheet" type="text/css" href="css/estilo.css" >
 </head>
 <body class="clearfix">
@@ -30,21 +32,23 @@
 		<button type="button" data-id="image3" class="button hand">3</button>
 	</div>
 	<div class="article" id="about-us"> <h2 class="title"> SOBRE NOSOTROS </h2>
-		Pistas de pádel económicas para momentos de crisis. En Pádel Colinas ofrecemos pistas de calidad, limpiadas y acondicionadas diariamente, y a un precio inigualable.<br> Por tan solo <span class="price yellow">10€ la hora y media.</span>
+		<p>Pistas de pádel económicas para momentos de crisis. En Pádel Colinas ofrecemos pistas de calidad, limpiadas y acondicionadas diariamente, y a un precio inigualable.<br> Por tan solo <span class="price yellow">10€ la hora y media.</span></p>
 		
 
 		<h2 class="title">CONOCE NUESTRAS INSTALACIONES</h2>
 
-		<div id="video"><video controls muted preload="metadata" poster="img/image4.jpeg">
-			<source src="img/video.mp4" type="video/mp4"/>
-			<p>Tu navegador no soporta vídeo</p>
-		</video></div>
+		<div id="video">
+			<video controls muted preload="metadata" poster="img/image4.jpeg">
+				<source src="img/video.mp4" type="video/mp4"/>
+				<p>Tu navegador no soporta vídeo</p>
+			</video>
+		</div>
 
 	</div>
 
 	<div class="article" id="where">
 		<h2 class="title">DÓNDE ENCONTRARNOS</h2>
-		Nos encontramos en el Polígono Espíritu Santo, que se encuentra en la carretera de Colloto por la N-634.
+		<p>Nos encontramos en el Polígono Espíritu Santo, que se encuentra en la carretera de Colloto por la N-634.</p>
 		<div id="map">
 		</div>
 		<div class="buttons">
@@ -54,9 +58,34 @@
 	</div>
 
 	<div class="article" id="res">
-		
+		<h2 class="title">RESERVA CON NOSOTROS</h2>
+			<form id="form" method="post" action="">
+			</form><br>
+			<p>También puedes ponerte en contacto con nosotros por teléfono.<br>
+				Tlf. fijo: 985 985 985<br>
+				Tlf. movil: 678 678 678<br><br>
+			</p>
+			<p>O por correo electrónico.<br>
+				email: <a class="res" href="mailto:reservas@padelcolinas.com" target="_blank">reservas@padelcolinas.com</a><br>
+			</p>
 	</div>
-</div>	
+</div>
+<footer>
+	<div class="col-left">Diseño de la web por Pedro Colinas<br>
+	<a href="mailto:pcolinas@gmail.com" target="_blank">
+		<img class="contact" src="img/gmail.png" alt="Gmail"></a>
+	<a href="https://www.facebook.com/pcolinasnunez" target="_blank">
+		<img class="contact" src="img/facebook.png" alt="facebook"></a>
+	<a href="https://twitter.com/pcolinas" target="_blank">
+		<img class="contact" src="img/twitter.png" alt="twitter"></a>
+	<a href="http://youtube.com/rickygervais" target="_blank">
+		<img class="contact" src="img/youtube.png" alt="youtube"></a>
+	</div>
+	<div class="col-right">Tlf. fijo: 985 985 985<br>
+		Tlf. movil: 678 678 678<br>
+		email: <a class="res" href="mailto:reservas@padelcolinas.com" target="_blank">reservas@padelcolinas.com</a>
+	</div>
+</footer>	
 <script src="javascript/jquery.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 <script src="javascript/gmaps.js"></script>

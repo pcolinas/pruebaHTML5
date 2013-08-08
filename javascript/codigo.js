@@ -28,10 +28,15 @@ function changeImage(){
 price = $(".price");
 
 setInterval(function(){ 
-	if(price.hasClass("yellow"))
-		price.removeClass("yellow").addClass("red");
+	if(price.hasClass("yellow-price")){
+		price.removeClass("yellow-price");
+		if($("body").hasClass("orange")){
+			price.addClass("green-price");
+		}
+		else price.addClass("red-price");
+	}
 	
-	else price.removeClass("red").addClass("yellow");
+	else price.removeClass("red-price").removeClass("green-price").addClass("yellow-price");
 }
 ,1000);
 
@@ -196,21 +201,20 @@ $().ready(function() {
  Como firefox no reconoce algunas nuevas etiquetas de html5 haremos algún cambio en el formulario
 */
 
-temp_res = '<h2 class="title">RESERVA CON NOSOTROS</h2><form method="post" action="http://ejemplo.com/procesa"><label> Nombre: <input name="cliente" placeholder="Escribe aquí"></label><br><label> Teléfono: <input type=tel name="telf" placeholder="Escribe aquí"></label><br><label> Correo electrónico: <input type=email name="correo" placeholder="hola@hola.es"></label><br><label> Fecha de reserva: <input type=date name=fecha placeholder="{{plcDate}}"></label><br><label> Hora: <input type=number name=dia min=9 max=21 placeholder="{{plcTime}}"></label><br><button>Enviar</button><br></form><br>También puedes ponerte en contacto con nosotros por teléfono.<br>Tlf. fijo: 985 985 985<br>Tlf. movil: 678 678 678<br><br>O por correo electrónico.<br>email: reservas@padelcolinas.com<br>';
+temp_form = '<label> Nombre: <input name="client" id="client" placeholder="Escribe aquí"></label><br><label> Teléfono: <input type=tel name="telf" id="telf" placeholder="Escribe aquí"></label><br><label> Correo electrónico: <input type=email name="mail" id="mail" placeholder="hola@hola.es"></label><br><label> Fecha de reserva: <input type=date name="date" id="date" placeholder="{{plcDate}}"></label><br><label> Hora: <input type=number name="time" id="time" min=9 max=21 placeholder="{{plcTime}}"></label><br><button type="submit">Enviar</button><br>';
 
 if(navigator.userAgent.match(/firefox/i)){ //estamos en firefox
-	temp_res = temp_res.replace('{{plcDate}}', 'dd/mm/aaaa');
-	temp_res = temp_res.replace('{{plcTime}}', 'Entre las 9.00-21.00');
-
-	$("#res").append(temp_res);
+	temp_form = temp_form.replace('{{plcDate}}', 'dd/mm/aaaa');
+	temp_form = temp_form.replace('{{plcTime}}', 'Entre las 9.00-21.00');
 }
 else { // Estamos en chrome o en otro
-	temp_res = temp_res.replace('{{plcDate}}', '');
-	temp_res = temp_res.replace('{{plcTime}}', '');
-
-	$("#res").append(temp_res);
+	temp_form = temp_form.replace('{{plcDate}}', '');
+	temp_form = temp_form.replace('{{plcTime}}', '');
 
 }
+
+$("#form").append(temp_form);
+
 
 /* Detectar dispositivo móvil porque el menú se comportaba raro al hacer zoom*/
 
@@ -227,3 +231,21 @@ else { // Estamos en chrome o en otro
  else {
     $(".menu").addClass("not-mobile");
  }
+
+/* Sacar en una alerta los datos del formulario*/
+
+$("#form").on("submit", sendData);
+
+function sendData(){ //Simulamos un envío de los datos
+
+	client = $("#client").val();
+	telf = $("#telf").val();
+	mail = $("#mail").val();
+	date = $("#date").val();
+	time = $("#time").val();
+
+	if(client.length == 0 || telf.length == 0 || mail.length == 0 || date.length == 0 || time.length == 0){
+		alert("Has dejado campos vacíos en el formulario");
+	}
+	else alert("Datos introducidos:"+"\n\nNombre: "+client+"\nTeléfono: "+telf+"\nemail: "+mail+"\nFecha: "+date+"\nHora"+time);
+}
