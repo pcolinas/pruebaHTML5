@@ -10,13 +10,13 @@ function changeImage(){
 
 	switch(id){
 		case 'image1':
-			temp = temp.replace('{{alt}}', 'Raqueta de padel y bolas');
+			temp = temp.replace('{{alt}}', 'Raqueta de pádel y bolas');
 			break;
 		case 'image2':
-			temp = temp.replace('{{alt}}', 'Pista de padel desde arriba');
+			temp = temp.replace('{{alt}}', 'Pista de pádel desde arriba');
 			break;
 		case 'image3':
-			temp = temp.replace('{{alt}}', 'Partido de padel');
+			temp = temp.replace('{{alt}}', 'Partido de pádel');
 			break;
 	}
 
@@ -57,7 +57,7 @@ function showMap() {
 	map.addMarker({
 		lat: 43.378938,
 		lng: -5.805685,
-		title: 'Padel Colinas'
+		title: 'Pádel Colinas'
 	});
 } 
 
@@ -82,7 +82,7 @@ function myPosition(position){
 	map.addMarker({
 		lat: myPlace.lb,
 		lng: myPlace.mb,
-		title: 'Padel Colinas'
+		title: 'Pádel Colinas'
 	});
 
 	map.addMarker({

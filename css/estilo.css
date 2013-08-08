@@ -213,6 +213,12 @@ footer{
 	padding: 1em 2.5%;
 }
 
+.to-top{
+	float: right;
+	text-decoration: underline;
+	font-size: 0.7em;
+}
+
 .contact{
 	margin:	0.5em 0.3em 0 0.3em;
 }
