@@ -50,7 +50,7 @@ function showMap() {
 		lat: 43.378938,
 		lng: -5.805685,
 		height: '500px',
-		mapTypeId:google.maps.MapTypeId.ROADMAP
+		scrollwheel: false
 	});
 
 
@@ -77,6 +77,7 @@ function myPosition(position){
 	map = new GMaps({
 		div: '#map',
 		height: '500px',
+		scrollwheel: false
 	});
 
 	map.addMarker({
@@ -128,6 +129,7 @@ function handleGeolocation(position){
 	var request = {
 		origin: yourPlace,
 		destination: myPlace,
+		scrollwheel: false,
 		travelMode: google.maps.TravelMode.DRIVING
 	};
 	
