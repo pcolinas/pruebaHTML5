@@ -230,6 +230,7 @@ $("#form").append(temp_form);
 
 
 /* Detectar dispositivo móvil porque el menú se comportaba raro al hacer zoom*/
+/* También se ha añadido el chrome ya que se comportaba de manera extraña*/
 
  if( navigator.userAgent.match(/Android/i)
  || navigator.userAgent.match(/webOS/i)
@@ -238,6 +239,7 @@ $("#form").append(temp_form);
  || navigator.userAgent.match(/iPod/i)
  || navigator.userAgent.match(/BlackBerry/i)
  || navigator.userAgent.match(/Windows Phone/i)
+ || navigator.userAgent.match(/chrome/i)
  ){
     $(".menu").removeClass("not-mobile");
  }
