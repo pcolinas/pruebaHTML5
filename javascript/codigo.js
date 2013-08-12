@@ -49,7 +49,7 @@ function showMap() {
 		div: '#map',
 		lat: 43.378938,
 		lng: -5.805685,
-		height: '500px',
+		height: '25em',
 		scrollwheel: false
 	});
 
@@ -76,7 +76,7 @@ function myPosition(position){
 	
 	map = new GMaps({
 		div: '#map',
-		height: '500px',
+		height: '25em',
 		scrollwheel: false
 	});
 
@@ -117,7 +117,8 @@ function handleGeolocation(position){
 	directionsDisplay = new google.maps.DirectionsRenderer();
 
 	var mapOptions = {
-		height: '500px',
+		height: '25em',
+		scrollwheel: false,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
 	
@@ -129,7 +130,6 @@ function handleGeolocation(position){
 	var request = {
 		origin: yourPlace,
 		destination: myPlace,
-		scrollwheel: false,
 		travelMode: google.maps.TravelMode.DRIVING
 	};
 	
@@ -203,17 +203,28 @@ $().ready(function() {
  Como firefox no reconoce algunas nuevas etiquetas de html5 haremos algún cambio en el formulario
 */
 
-temp_form = '<label> Nombre: <input name="client" id="client" placeholder="Escribe aquí"></label><br><label> Teléfono: <input type=tel name="telf" id="telf" placeholder="Escribe aquí"></label><br><label> Correo electrónico: <input type=email name="mail" id="mail" placeholder="hola@hola.es"></label><br><label> Fecha de reserva: <input type=date name="date" id="date" placeholder="{{plcDate}}"></label><br><label> Hora: <input type=number name="time" id="time" min=9 max=21 placeholder="{{plcTime}}"></label><br><button type="submit">Enviar</button><br>';
+temp_form = '<label> Nombre: <input name="client" id="client" placeholder="Escribe aquí"></label><br><label> Teléfono: <input type=tel name="telf" id="telf" placeholder="Escribe aquí"></label><br><label> Correo electrónico: <input type=email name="mail" id="mail" placeholder="hola@hola.es"></label><br><label> Fecha de reserva: <input type=date name="date" id="date" value="{{val}}"></label><br><label> Hora: <input type=number name="time" id="time" min=9 max=21 placeholder="{{plcTime}}"></label><br><button type="submit">Enviar</button><br>';
+ 
+ // A partir de aquí es para calcular el día de hoy y ponerlo por defecto
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
+var yyyy = today.getFullYear();
 
+if(dd<10)dd='0'+dd;
+if(mm<10)mm='0'+mm;
+today = dd+'/'+mm+'/'+yyyy;
+
+//Comprobamos el navegador
 if(navigator.userAgent.match(/firefox/i)){ //estamos en firefox
-	temp_form = temp_form.replace('{{plcDate}}', 'dd/mm/aaaa');
 	temp_form = temp_form.replace('{{plcTime}}', 'Entre las 9.00-21.00');
 }
 else { // Estamos en chrome o en otro
-	temp_form = temp_form.replace('{{plcDate}}', '');
 	temp_form = temp_form.replace('{{plcTime}}', '');
 
 }
+	
+temp_form = temp_form.replace('{{val}}', today);
 
 $("#form").append(temp_form);
 

@@ -46,11 +46,17 @@ table {
 
 /* INICIO DEL CSS PROPIO*/
 
+html{
+	height: 100%;
+	overflow: auto;
+}
+
 body {
 
 	/*background-color: #0092BF;*/
 	color: #fff;
 	font-family: Helvetica;
+	overflow: auto;
 }
 
 h1{
