@@ -263,4 +263,6 @@ function sendData(){ //Simulamos un envío de los datos
 		alert("Has dejado campos vacíos en el formulario");
 	}
 	else alert("Datos introducidos:"+"\n\nNombre: "+client+"\nTeléfono: "+telf+"\nemail: "+mail+"\nFecha: "+date+"\nHora"+time);
+
+	return false;
 }
