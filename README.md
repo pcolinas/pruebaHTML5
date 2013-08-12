@@ -1,3 +1,4 @@
+La web es un poco distinta dependiendo del navegador y del dispositivo. Se detallan las diferencias en cada sección.
 
 * HTML5
 
@@ -18,18 +19,27 @@
 * CSS
 
 	En el css destacar que se han añadido bloques de código ya programados y encontrados en la web, estos son:
+
 	- Un reseteo de todas las propiedades por posibles problemas con las estilos predefinidos de cada navegador.
+
 	- la clase clearfix, que ayuda a resolver problemas con los float:left/right.
 
-	Por lo demás son propiedades habituales css, por destacar algo:
+
+	Lo demás son propiedades habituales css, por destacar algo con lo que hubo que pegarse un poco y que hubo que buscar por la red:
+
 	- los estilos asociados a la clase hand, que cambian el puntero a una mano cuando pasamos por encima de <div> y <li> que son
 	  clicables.
+
 	- El position:fixed asociado a la clase 'not-mobile' del menú. En principio se había aplicado al menú, pero en dispositivos móviles
 	  quedaba mal al hacer zoom y en chrome desaparecía a veces haciendo scroll y clicando en los <li>.
+
 	- También en el menú se quitaron los "bullets" de la <ul> con list-style-type: none.
+
 	- Se empleó la propiedad li:not(:first-child) para que solo se sombrearan los <li> que tienen enlace a las secciones de la web, ya que el
 	  primer elemento es el título "Menú".
+
 	- Desactivación del text-decoration en los <a> para que no aparezcan subrayados y en azul, y en morado una vez visitados.
+
 
 * JavaScript
 	
