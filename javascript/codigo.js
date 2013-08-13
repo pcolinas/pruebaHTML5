@@ -1,28 +1,55 @@
 /* Evento y función para cambiar la imagen principal dependiendo del botón que pulsemos */
-$(".button").on("click", changeImage);
+$(".button").on("click", changeImg);
 
-function changeImage(){
-	temp = '<img class="big" src="img/{{id}}.jpg" alt="{{alt}}">'
-	
-	id = $(this).data("id");
+slideImage();
+
+function slideImage(){
+	var myTime = setInterval(changeImage, 5000)
+}
+function changeImg(e){
+	e.preventDefault();
+	var clic = $(this);
+	var imgId = clic.data("id");
+	changeImage(clic, imgId);
+}
+function changeImage(clic, imgId){
+	temp = '<img class="big" src="img/image{{id}}.jpg" alt="{{alt}}">'
+	este = $(this);
+
+	if(imgId){
+		id = imgId; // Si venimos de clic
+	}
+	else id = $(".shadow").data("id")+1; //Si venimos de setInterval
+
+	if(id > 3) id = 1;
 
 	temp = temp.replace('{{id}}', id);
 
 	switch(id){
-		case 'image1':
+		case '1':
 			temp = temp.replace('{{alt}}', 'Raqueta de pádel y bolas');
 			break;
-		case 'image2':
+		case '2':
 			temp = temp.replace('{{alt}}', 'Pista de pádel desde arriba');
 			break;
-		case 'image3':
+		case '3':
 			temp = temp.replace('{{alt}}', 'Partido de pádel');
 			break;
 	}
 
 	$(".big").replaceWith(temp);
 
+	$(".button").removeClass("shadow");
+
+	if(imgId)
+		clic.addClass("shadow");
+	else $("#"+id).addClass("shadow");
+
+	imgId = 0;
 }
+
+
+
 
 /* Función para cambiar el color del precio */
 price = $(".price");

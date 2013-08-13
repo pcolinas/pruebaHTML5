@@ -71,6 +71,11 @@ div.buttons{
 	padding: 0 25%;
 
 }
+
+.shadow{
+	background-color: blue;
+}
+
 #big-img{
 	padding: 0 25%;
 	text-align: center;
@@ -128,7 +133,7 @@ a.res{
 
 .article{
 
-	padding: 0 20%;
+	padding: 1em 20%;
 	color:	#fff;
 	margin: 6em 0;
 	
