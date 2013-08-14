@@ -19,7 +19,7 @@ function changeImage(clic, imgId){
 	if(imgId){
 		id = imgId; // Si venimos de clic
 	}
-	else id = $(".shadow").data("id")+1; //Si venimos de setInterval
+	else id = $(".selected").data("id")+1; //Si venimos de setInterval
 
 	if(id > 3) id = 1;
 
@@ -39,11 +39,11 @@ function changeImage(clic, imgId){
 
 	$(".big").replaceWith(temp);
 
-	$(".button").removeClass("shadow");
+	$(".button").removeClass("selected");
 
 	if(imgId)
-		clic.addClass("shadow");
-	else $("#"+id).addClass("shadow");
+		clic.addClass("selected");
+	else $("#"+id).addClass("selected");
 
 	imgId = 0;
 }

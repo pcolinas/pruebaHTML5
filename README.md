@@ -10,9 +10,8 @@ La web es un poco distinta dependiendo del navegador y del dispositivo. Se detal
 
 	- En el menú los <li> son enlaces que llevan a las distintas zonas de la pág empleando los id.
 	- Se ha añadido un favicon a la web. 
-	- Vídeo solo en formato mp4 por sencillez a la hora de descargar y no buscar un conversor. Se añadió
-	  una imagen de fondo ("poster") de unas raquetas de pádel. También se puso el vídeo en silencio por
-	  defecto ya que era un poco escandaloso. 
+	- Vídeo en formato mp4 y ogg. Se añadió una imagen de fondo ("poster") de unas raquetas de pádel. También se puso el vídeo
+	  en silencio por defecto ya que era un poco escandaloso. 
 	- Los teléfonos y mails son <a> con los href especiales "tel:" y "mail:to".
 
 
@@ -57,6 +56,8 @@ La web es un poco distinta dependiendo del navegador y del dispositivo. Se detal
 		- Bajo la foto grande hay tres botones numerados para simular un slider, clicando en cada uno de
 		  ellos cambiamos la foto que se muestra. En este caso empleamos un data-id para indentificar el
 		  botón pulsado y modificamos una plantilla con la <img> y posteriormente la enganchamos al html.
+		
+		- También cambian las fotos ellas solas cada 5 segundos haciendo uso de un setInterval.
 
 		- Menú: Empleamos javaScript para saber si estamos en un plataforma móvil y añadirle o no la clase
 			no-mobile que añade la propiedad css position:fixed que, en móvil, como se tiende a hacer 
@@ -65,7 +66,7 @@ La web es un poco distinta dependiendo del navegador y del dispositivo. Se detal
 			desaparecía y reaparecía al moverse y, sobre todo, al hacer clice ir a las distintas secciones. 
 
 		- En la sección conócenos, por incluir algo de javaScript, se realizó el parpadeo con cambio de color
-		  del precio con un setTimeInterval. También, el color que no es amarillo cambia dependiendo del color del fondo
+		  del precio con un setInterval. También, el color que no es amarillo cambia dependiendo del color del fondo
 		  de la web, aunque esto se realiza en la sección de "personalizar la web".
 
 		- Botones para elegir función en el mapa.

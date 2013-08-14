@@ -72,8 +72,8 @@ div.buttons{
 
 }
 
-.shadow{
-	background-color: blue;
+.selected{
+	background-color: #939694;
 }
 
 #big-img{
@@ -98,6 +98,7 @@ div.buttons{
 	border-radius: 30px;
 	margin: 0.5em 0.3em;
 	font-size: 0.5em;
+	width: 0.1em;
 }
 
 ul{
