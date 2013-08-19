@@ -79,7 +79,8 @@ La web es un poco distinta dependiendo del navegador y del dispositivo. Se detal
 
 		- En la sección de reserva, como los nuevos input types no se soportan en firefox, detectamos si estamos
 		  en firefox para cambiar un poco el formulario. También conseguimos la fecha actual para ponerla por defecto
-		  en el input "date".  
+		  en el input "date". Sacamos un alert con los datos introducidos si todo está correcto, si no, pedimos que se
+		  introduzcan los datos en los campos que se dejaron vacíos.
 	
 	-> APIs
 
