@@ -274,6 +274,22 @@ $("#form").append(temp_form);
     $(".menu").addClass("not-mobile");
  }
 
+/* Si la ventana es muy pequeña, fijamos tamaño del menú y la poscición*/
+
+if($(window).width() < 700){
+	$(".menu").addClass("small-wndw");
+	$(".menu").removeClass("not-mobile");
+}
+
+/* Si al redimensionar la ventana la dejamos muy pequeña */
+
+$(window).resize(function(){
+	if($(window).width() < 700){
+		$(".menu").addClass("small-wndw");
+		$(".menu").removeClass("not-mobile");
+	}	
+})
+
 /* Sacar en una alerta los datos del formulario*/
 
 $("#form").on("submit", sendData);

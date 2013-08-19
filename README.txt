@@ -66,7 +66,10 @@ La web es un poco distinta dependiendo del navegador y del dispositivo. Se detal
 			no-mobile que añade la propiedad css position:fixed que, en móvil, como se tiende a hacer 
 			zoom, se estropeaba y no quedaba bien. También se quita la propiedad en el chrome, ya que
 			al entrar a la web ya subida a github desde chrome, el menú, que se desplazaba con el scroll, 
-			desaparecía y reaparecía al moverse y, sobre todo, al hacer clice ir a las distintas secciones. 
+			desaparecía y reaparecía al moverse y, sobre todo, al hacer clic e ir a las distintas secciones.
+			
+			También miramos el tamaño de la ventana, ya que al hacerla pequeña, las palabras se salían del recuadro,
+			por ello, a partir de un determinado tamaño, fijamos un width al menú y lo anclamos como en los casos anteriores. 
 
 		- En la sección conócenos, por incluir algo de javaScript, se realizó el parpadeo con cambio de color
 		  del precio con un setInterval. También, el color que no es amarillo cambia dependiendo del color del fondo
