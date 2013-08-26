@@ -1,7 +1,7 @@
-La web pensada para el trabajo del curso es la página ficticia de una empresa de alquiler de pistas de pádel, con sus secciones de presentación, localización y
-reserva.
+La web pensada para el trabajo del curso es la pï¿½gina ficticia de una empresa de alquiler de pistas de pï¿½del, 
+con sus secciones de presentaciï¿½n, localizaciï¿½n y reserva.
 
-La web es un poco distinta dependiendo del navegador y del dispositivo. Se detallan las diferencias en cada sección.
+La web es un poco distinta dependiendo del navegador y del dispositivo. Se detallan las diferencias en cada secciï¿½n.
 
 * HTML5
 
@@ -11,92 +11,97 @@ La web es un poco distinta dependiendo del navegador y del dispositivo. Se detal
 
 	A destacar:
 
-	- En el menú los <li> son enlaces que llevan a las distintas zonas de la pág empleando los id.
-	- Se ha añadido un favicon a la web. 
-	- Vídeo en formato mp4 y ogg. Se añadió una imagen de fondo ("poster") de unas raquetas de pádel. También se puso el vídeo
-	  en silencio por defecto ya que era un poco escandaloso. 
-	- Los teléfonos y mails son <a> con los href especiales "tel:" y "mail:to".
+	- En el menï¿½ los <li> son enlaces que llevan a las distintas zonas de la pï¿½g empleando los id.
+	- Se ha aï¿½adido un favicon a la web. 
+	- Vï¿½deo en formato mp4 y ogg. Se aï¿½adiï¿½ una imagen de fondo ("poster") de unas raquetas de pï¿½del. Tambiï¿½n 
+	se puso el vï¿½deo en silencio por defecto ya que era un poco escandaloso. 
+	- Los telï¿½fonos y mails son <a> con los href especiales "tel:" y "mail:to".
 
 
 * CSS
 
-	En el css destacar que se han añadido bloques de código ya programados y encontrados en la web, estos son:
+	En el css destacar que se han aï¿½adido bloques de cï¿½digo ya programados y encontrados en la web, estos son:
 
 	- Un reseteo de todas las propiedades por posibles problemas con las estilos predefinidos de cada navegador.
 
 	- la clase clearfix, que ayuda a resolver problemas con los float:left/right.
 
 
-	Lo demás son propiedades habituales css, por destacar algo con lo que hubo que pegarse un poco y que hubo que buscar por la red:
+	Lo demï¿½s son propiedades habituales css, por destacar algo con lo que hubo que pegarse un poco y que hubo que
+	buscar por la red:
 
-	- los estilos asociados a la clase hand, que cambian el puntero a una mano cuando pasamos por encima de <div> y <li> que son
-	  clicables.
+	- los estilos asociados a la clase hand, que cambian el puntero a una mano cuando pasamos por encima de <div> y 
+	<li> que son clicables.
 
-	- El position:fixed asociado a la clase 'not-mobile' del menú. En principio se había aplicado al menú, pero en dispositivos móviles
-	  quedaba mal al hacer zoom y en chrome desaparecía a veces haciendo scroll y clicando en los <li>.
+	- El position:fixed asociado a la clase 'not-mobile' del menï¿½. En principio se habï¿½a aplicado al menï¿½, 
+	pero en dispositivos mï¿½viles quedaba mal al hacer zoom y en chrome desaparecï¿½a a veces haciendo scroll y 
+	clicando en los <li>.
 
-	- También en el menú se quitaron los "bullets" de la <ul> con list-style-type: none.
+	- Tambiï¿½n en el menï¿½ se quitaron los "bullets" de la <ul> con list-style-type: none.
 
-	- Se empleó la propiedad li:not(:first-child) para que solo se sombrearan los <li> que tienen enlace a las secciones de la web, ya que el
-	  primer elemento es el título "Menú".
+	- Se empleï¿½ la propiedad li:not(:first-child) para que solo se sombrearan los <li> que tienen enlace a las 
+	secciones de la web, ya que el primer elemento es el tï¿½tulo "Menï¿½".
 
-	- Desactivación del text-decoration en los <a> para que no aparezcan subrayados y en azul, y en morado una vez visitados.
+	- Desactivaciï¿½n del text-decoration en los <a> para que no aparezcan subrayados y en azul, y en morado 
+	una vez visitados.
 
 
 * JavaScript
 	
 	Empleando jQuery por simplicidad. Incluyendo el archivo jquery.min.js
-	De esta manera podemos acceder a los elementos del html fácilmente con $('class or id').
+	De esta manera podemos acceder a los elementos del html fï¿½cilmente con $('class or id').
 
 	Funcionalidades implementadas:
 	
 	Empezando desde arriba, vemos:
 
 		- 'Personaliza la web': con clic en los cuadros de color cambiamos el color de la web. Para
-					ello, detectando el elemento clicado, añadimos una clase u otra al body
+					ello, detectando el elemento clicado, aï¿½adimos una clase u otra al body
 					que tienen asociados distintos estilos css.
 
 		- Bajo la foto grande hay tres botones numerados para simular un slider, clicando en cada uno de
 		  ellos cambiamos la foto que se muestra. En este caso empleamos un data-id para indentificar el
-		  botón pulsado y modificamos una plantilla con la <img> y posteriormente la enganchamos al html.
+		  botï¿½n pulsado y modificamos una plantilla con la <img> y posteriormente la enganchamos al html.
 		
-		- También cambian las fotos ellas solas cada 5 segundos haciendo uso de un setInterval.
+		- Tambiï¿½n cambian las fotos ellas solas cada 5 segundos haciendo uso de un setInterval.
 
-		- Menú: Empleamos javaScript para saber si estamos en un plataforma móvil y añadirle o no la clase
-			no-mobile que añade la propiedad css position:fixed que, en móvil, como se tiende a hacer 
-			zoom, se estropeaba y no quedaba bien. También se quita la propiedad en el chrome, ya que
-			al entrar a la web ya subida a github desde chrome, el menú, que se desplazaba con el scroll, 
-			desaparecía y reaparecía al moverse y, sobre todo, al hacer clic e ir a las distintas secciones.
+		- Menï¿½: Empleamos javaScript para saber si estamos en un plataforma mï¿½vil y aï¿½adirle o no la clase
+			no-mobile que aï¿½ade la propiedad css position:fixed que, en mï¿½vil, como se tiende a hacer 
+			zoom, se estropeaba y no quedaba bien. Tambiï¿½n se quita la propiedad en el chrome, ya que
+			al entrar a la web ya subida a github desde chrome, el menï¿½, que se desplazaba con el scroll, 
+			desaparecï¿½a y reaparecï¿½a al moverse y, sobre todo, al hacer clic e ir a las distintas secciones.
 			
-			También miramos el tamaño de la ventana, ya que al hacerla pequeña, las palabras se salían del recuadro,
-			por ello, a partir de un determinado tamaño, fijamos un width al menú y lo anclamos como en los casos anteriores. 
+			Tambiï¿½n miramos el tamaï¿½o de la ventana, ya que al hacerla pequeï¿½a, las palabras se salï¿½an 
+			del recuadro, por ello, a partir de un determinado tamaï¿½o, fijamos un width al menï¿½ y lo 
+			anclamos como en los casos anteriores. 
 
-		- En la sección conócenos, por incluir algo de javaScript, se realizó el parpadeo con cambio de color
-		  del precio con un setInterval. También, el color que no es amarillo cambia dependiendo del color del fondo
-		  de la web, aunque esto se realiza en la sección de "personalizar la web".
+		- En la secciï¿½n conï¿½cenos, por incluir algo de javaScript, se realizï¿½ el parpadeo con cambio de color
+		  del precio con un setInterval. Tambiï¿½n, el color que no es amarillo cambia dependiendo del color 
+		  del fondo de la web, aunque esto se realiza en la secciï¿½n de "personalizar la web".
 
-		- Botones para elegir función en el mapa.
+		- Botones para elegir funciï¿½n en el mapa.
 
-		- En la sección de reserva, como los nuevos input types no se soportan en firefox, detectamos si estamos
-		  en firefox para cambiar un poco el formulario. También conseguimos la fecha actual para ponerla por defecto
-		  en el input "date". Sacamos un alert con los datos introducidos si todo está correcto, si no, pedimos que se
-		  introduzcan los datos en los campos que se dejaron vacíos.
+		- En la secciï¿½n de reserva, como los nuevos input types no se soportan en firefox, detectamos si 
+		estamos en firefox para cambiar un poco el formulario. Tambiï¿½n conseguimos la fecha actual para
+		ponerla por defecto en el input "date". Sacamos un alert con los datos introducidos si todo estï¿½
+		correcto, si no, pedimos que se introduzcan los datos en los campos que se dejaron vacï¿½os.
 	
 	-> APIs
 
-		- Google Maps: creando mapas de dos maneras, con GMaps, como se realizó en el curso y paso a paso como
+		- Google Maps: creando mapas de dos maneras, con GMaps, como se realizï¿½ en el curso y paso a paso como
 			      se explica en la web de la API. Se implementaron 3 "modos".
-			1. Localización de las pistas, con nombre en el marcador.
-			2. Localización del usuario y de las pistas (esta fue previa a realizar la ruta y se dejó por el
-			    trabajo que llevó centrar el mapa y conseguir el zoom adecuado para ver los dos marcadores)
-			3. Ruta entre la localización actual y las pistas.
-			** 2 y 3 dan "problemas" en chrome y movil ya que hay que activar la geolocalización.
+			1. Localizaciï¿½n de las pistas, con nombre en el marcador.
+			2. Localizaciï¿½n del usuario y de las pistas (esta fue previa a realizar la ruta y se dejï¿½ 
+			por el trabajo que llevï¿½ centrar el mapa y conseguir el zoom adecuado para ver los dos 
+			marcadores).
+			3. Ruta entre la localizaciï¿½n actual y las pistas.
+			** 2 y 3 dan "problemas" en chrome y movil ya que hay que activar la geolocalizaciï¿½n.
 
-			También se desactivó el zoom con scroll ya que interfería con el scroll de la propia web y era
-			molesto.
+			Tambiï¿½n se desactivï¿½ el zoom con scroll ya que interferï¿½a con el scroll de la propia web y 
+			era molesto.
 
 		- localStorage: lo de personalizar el color de la web se hizo para utilizar el localStorage, por defecto
-			       la web será azul, pero se almacenará en localStorage la elección del color.
+			       la web serï¿½ azul, pero se almacenarï¿½ en localStorage la elecciï¿½n del color.
 
 
 		
